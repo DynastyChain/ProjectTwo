@@ -1,0 +1,30 @@
+<%= form_for @rec do |f| %>
+ <p>
+   <%= f.label :dish, class: "dish" %><br>
+   <%= f.text_field :dish %>
+ </p>
+
+ <p>
+   <%= f.label :preptime, class: "preptime (minutes)" %><br>
+   <%= f.text_field :preptime %>
+ </p>
+
+ <p>
+   <%= f.label :cooktime, class: "cooktime (minutes)" %><br>
+   <%= f.text_field :cooktime %>
+ </p>
+
+ <p>
+   <%= f.label :ingredients, class: "ingredients" %><br>
+   <%= f.text_field :ingredients %>
+ </p>
+
+ <p>
+   <%= f.label :steps, class: "steps" %><br>
+   <%= f.text_field :steps %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+<% end %>

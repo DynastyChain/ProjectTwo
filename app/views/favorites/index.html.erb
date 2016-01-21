@@ -1,0 +1,11 @@
+<div class="index-content">
+<% @fav.each do |n| %>
+<a href="/favorites/<%= n.id%>"><%= @rec.find(n.recipe_id).dish %></a><br><br>
+<b>Prep Time</b>: <%= @rec.find(n.recipe_id).preptime %> Minutes<br><br>
+<b>Cook Time</b>: <%= @rec.find(n.recipe_id).cooktime %> Minutes<br><br>
+<% end %>
+
+<a href="/recipes">Home</a>
+</div>
+
+

@@ -1,0 +1,23 @@
+<div class="index-content">
+<div class="search">
+<%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+<%= submit_tag "Search" %>
+<% end %>
+</div>
+<% if @recipes.present? %>
+  <%= render @recipes %>
+
+<% end %>
+
+
+
+<% @recipe.each do |n| %>
+<a href="/recipes/<%=n.id%>">
+<%= n.dish %></a><br><br>
+<b>Prep Time</b>: <%= n.preptime %> Minutes<br><br>
+<b>Cook Time</b>: <%= n.cooktime %> Minutes<br><br>
+<br><br>
+<% end %>
+</div>
+
