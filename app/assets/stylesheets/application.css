@@ -63,10 +63,17 @@ a:hover {
   border-radius: 5px;
 
 }
-@media(max-width: 500px) {
+@media only screen and (max-width: 500px) {
   .timer {
     margin-left: 18%;
   }
+  button {
+    height: 44px;
+    width: 44px;
+
+  }
+
+
 }
 .search {
   margin-bottom: 10px;
