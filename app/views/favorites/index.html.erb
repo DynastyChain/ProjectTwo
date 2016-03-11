@@ -1,11 +1,21 @@
-<div class="index-content">
+<div class='container'>
+<div class='row'>
+<div class='col s4 offset-s4'>
+<h2>Favorites</h2>
+</div>
+</div>
+<br><br>
+
+<div class='row'>
 <% @fav.each do |n| %>
+<div class='col s3'>
 <a href="/favorites/<%= n.id%>"><%= @rec.find(n.recipe_id).dish %></a><br><br>
 <b>Prep Time</b>: <%= @rec.find(n.recipe_id).preptime %> Minutes<br><br>
-<b>Cook Time</b>: <%= @rec.find(n.recipe_id).cooktime %> Minutes<br><br>
+<b>Cook Time</b>: <%= @rec.find(n.recipe_id).cooktime %> Minutes<br><br><br><br>
+</div>
 <% end %>
 
-<a href="/recipes">Home</a>
-</div>
 
+</div>
+</div>
 

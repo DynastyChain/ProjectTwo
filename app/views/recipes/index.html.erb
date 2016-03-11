@@ -1,23 +1,33 @@
-<div class="index-content">
-<div class="search">
+<div class="container">
+<div class='row'>
+<div class='col s4 offset-s4'>
 <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
-<%= submit_tag "Search" %>
+<%= text_field_tag :search, params[:search], placeholder: "                                Search Recipes" %>
+<a class="waves-effect waves-light btn green"><%= submit_tag "Search" %></a>
 <% end %>
 </div>
+</div>
+
 <% if @recipes.present? %>
   <%= render @recipes %>
 
 <% end %>
 
+<br><br>
 
-
+<div class='row'>
 <% @recipe.each do |n| %>
+<div class='col s3'>
+
 <a href="/recipes/<%=n.id%>">
 <%= n.dish %></a><br><br>
 <b>Prep Time</b>: <%= n.preptime %> Minutes<br><br>
 <b>Cook Time</b>: <%= n.cooktime %> Minutes<br><br>
 <br><br>
+</div>
+
 <% end %>
+
+</div>
 </div>
 

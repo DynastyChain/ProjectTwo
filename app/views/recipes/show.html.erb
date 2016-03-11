@@ -1,23 +1,26 @@
-
+<div class='container'>
 <div class="show-content">
-<h1><%= @recipe.dish %></h1><br><br><br>
-<b>Prep Time</b>:<br> <%= @recipe.preptime %> Minutes<br><br><br>
-<b>Cook Time</b>:<br> <%= @recipe.cooktime %> Minutes<br><br><br>
-<b>Ingredients</b>:<br> <%= @recipe.ingredients %><br><br><br>
-<b>Steps</b>:<br> <%= @recipe.steps %>
-<br>
-<br>
+<h1><%= @recipe.dish %></h1><br><br>
+<u>Prep Time</u>:<br> <%= @recipe.preptime %> Minutes<br><br>
+<u>Cook Time</u>:<br> <%= @recipe.cooktime %> Minutes<br><br>
+<u>Ingredients</u>:<br> <%= @recipe.ingredients %><br><br>
+<u>Steps</u>:<br> <%= @recipe.steps %>
+<br><br><br>
 
-<a href="/recipes/<%=@recipe.id%>/new">Favorite</a>
+<% if user_signed_in? %>
+<a href="/recipes/<%=@recipe.id%>/new" class="waves-effect waves-light btn blue">Favorite</a><br><br><br>
+<% end %>
 
-<a href="/recipes/<%=@recipe.id%>/edit">Edit</a>
+<!-- <p>
 <%= link_to "Delete", @rec, method: :delete, data: { confirm: 'Are you sure you want to delete it?' } %>
-
+</p>  -->
 <div class="timer">
+<h3>Kitchen Timer</h3>
 <h1 id="time"><time>00:00:00</time></h1>
-<button id="start">start</button>
-<button id="stop">stop</button>
-<button id="clear">clear</button>
+<a class="waves-effect waves-light btn green" id="start">start</a>
+<a class="waves-effect waves-light btn red" id="stop">stop</a>
+<a class="waves-effect waves-light btn blue" id="clear">clear</a>
+</div>
 </div>
 </div>
  <script>

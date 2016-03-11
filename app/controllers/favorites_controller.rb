@@ -5,6 +5,7 @@ class FavoritesController < ApplicationController
     @fav = Favorite_Recipe.where(user_id: @user_id)
     @rec = Recipe.all
 
+
   end
 
   def new
@@ -28,9 +29,11 @@ class FavoritesController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
+
   end
 
   def destroy

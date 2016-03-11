@@ -1,18 +1,21 @@
-
+<div class='container'>
 <div class="show-content">
-<%= @rec.find(@fav.recipe_id).dish %></a><br><br>
-<b>Prep Time</b>:<br><br><%= @rec.find(@fav.recipe_id).preptime %> Minutes<br><br><br>
-<b>Cook Time</b>:<br><br><%= @rec.find(@fav.recipe_id).cooktime %> Minutes<br><br><br>
-<b>Ingredients</b>:<br><br><%= @rec.find(@fav.recipe_id).ingredients %><br><br><br>
-<b>Steps</b>:<br><br><%= @rec.find(@fav.recipe_id).steps %><br><br><br>
+<h1><%= @rec.find(@fav.recipe_id).dish %></h1><br><br>
+<u>Prep Time</u>:<br><%= @rec.find(@fav.recipe_id).preptime %> Minutes<br><br>
+<u>Cook Time</u>:<br><%= @rec.find(@fav.recipe_id).cooktime %> Minutes<br><br>
+<u>Ingredients</u>:<br><%= @rec.find(@fav.recipe_id).ingredients %><br><br>
+<u>Steps</u>:<br><%= @rec.find(@fav.recipe_id).steps %><br><br><br>
 
+<a class="waves-effect waves-light btn red" rel="nofollow" data-method="delete" href="/favorites/<%= @fav.id%>">Remove</a><br><br>
 
-<a rel="nofollow" data-method="delete" href="/favorites/<%= @fav.id%>">Remove</a>
-
+<div class="timer">
+<h3>Kitchen Timer</h3>
 <h1 id="time"><time>00:00:00</time></h1>
-<button id="start">start</button>
-<button id="stop">stop</button>
-<button id="clear">clear</button>
+<a class="waves-effect waves-light btn green" id="start">start</a>
+<a class="waves-effect waves-light btn red" id="stop">stop</a>
+<a class="waves-effect waves-light btn blue" id="clear">clear</a>
+</div>
+</div>
 </div>
  <script>
 
